@@ -1,19 +1,26 @@
-This folder contains all the data and code for CSC420 Project 3: 
+This folder contains all the data, code, and resource references for CSC420 Project 3: 
 http://www.cs.utoronto.ca/~fidler/teaching/2017/CSC420.html
+
 
 Explanation of the data:
 
 - images/*.jpg    600 images
-- labels/*_person.png   contains image labeling into person and background. If pixel has value 1, it belongs to the person class, otherwise it is background
-- labels/*_clothes.png  contain image labeling for 6 clothing types and background. See labels.txt for the label information.
--
+- labels/*_person.png   contain binary image label maps where each pixel is either 0 if it belongs to the bakcground of the imge 
+  or 1 if it belongs to the perosn in the image. 
+- labels/*_clothes.png  contain multi-class label maps where each pixel takes on one of the 7 values: 0,1,2,3,4,5,6 
+  depending on its category in {“background”, “skin”, “hair”, “t-shirt”, “shoes”, “pants”, “dress”}.
+
+-.mat files that contain trained SVMS, train data and test data for the SVMs. 
+-The truths.mat file cotainst the truths struct array from fashionista-v0.2.1.tgz. Each struct in this array contains pose    
+ information for one of our train images. 
 
 
 TRAIN/TEST split:
-We used 50% of the 600 images to train our classifiers. 50 images were used for testing purposes.
+We used 50% of the 600 images and their correspnding label maps to train our classifiers. 
+50 images were used for testing purposes.
 
-The function below are self explanatory. make sure you run the startup.m file first to add directory paths to your
-runtime environment before you run these function. 
+The functions below are self explanatory. make sure you run the startup.m file first to add directory paths to your
+matlab runtime environment before you run these function. 
 Function:
 
 [labels, features] = extractBinaryTrainData(truths)
@@ -23,11 +30,10 @@ labelmap = labelimagebinary(TrainedSVM, img)
 totalAccuracy = evaluateAccuracy(results, testlabels)
 
 
-To use the function in the libsvm library for windows, make sure you run the startup.m script first. 
+To use the functions in the libsvm library "windows", make sure you're on a Windows platform and that you run the startup.m script first. 
 
-The .mat files trained_binarySVMs.mat,  train_binarydata.mat,  test_binarydata.mat, contain the 4 trained SVMs using the 4 approaches listed above, the train data, and lastly the test data respectively.
 
-The .mat file truths.mat contains pose estimatin information about all the images used in our test. It was obtained from the fashinista website.
+Sources of data and code: 
 
 Sources used to obtain data: 
 http://vision.is.tohoku.ac.jp/~kyamagu/research/clothing_parsing/

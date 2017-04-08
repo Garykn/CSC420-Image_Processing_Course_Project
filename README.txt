@@ -6,8 +6,8 @@ Explanation of the data:
 - images/*.jpg    600 images
 - labels/*_person.png   contains image labeling into person and background. If pixel has value 1, it belongs to the person class, otherwise it is background
 - labels/*_clothes.png  contain image labeling for 6 clothing types and background. See labels.txt for the label information.
+-
 
-Function evaluateAccuracy evaluates accuracy of SVM prediction. Check the code to find out how to run it. 
 
 TRAIN/TEST split:
 We used 50% of the 600 images to train our classifiers. 50 images were used for testing purposes.
@@ -23,10 +23,11 @@ labelmap = labelimagebinary(TrainedSVM, img)
 totalAccuracy = evaluateAccuracy(results, testlabels)
 
 
+To use the function in the libsvm library for windows, make sure you run the startup.m script first. 
 
 The .mat files trained_binarySVMs.mat,  train_binarydata.mat,  test_binarydata.mat, contain the 4 trained SVMs using the 4 approaches listed above, the train data, and lastly the test data respectively.
 
-
+The .mat file truths.mat contains pose estimatin information about all the images used in our test. It was obtained from the fashinista website.
 
 Sources used to obtain data: 
 http://vision.is.tohoku.ac.jp/~kyamagu/research/clothing_parsing/

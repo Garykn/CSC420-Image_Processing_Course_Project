@@ -24,6 +24,8 @@ totalAccuracy = evaluateAccuracy(results, testlabels)
 
 
 
+The .mat files trained_binarySVMs.mat,  train_binarydata.mat,  test_binarydata.mat, contain the 4 trained SVMs using the 4 approaches listed above, the train data, and lastly the test data respectively.
+
 
 
 Sources used to obtain data: 

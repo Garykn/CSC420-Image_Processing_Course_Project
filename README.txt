@@ -10,6 +10,24 @@ Explanation of the data:
 Function evaluateAccuracy evaluates accuracy of SVM prediction. Check the code to find out how to run it. 
 
 TRAIN/TEST split:
-We used 50% of the 600 images to train our classifiers. 50 images were used for testing purposes. 
+We used 50% of the 600 images to train our classifiers. 50 images were used for testing purposes.
 
+The function below are self explanatory. make sure you run the startup.m file first to add directory paths to your
+runtime environment before you run these function. 
 Function:
+
+[labels, features] = extractBinaryTrainData(truths)
+
+labelmap = labelimagebinary(TrainedSVM, img)
+
+totalAccuracy = evaluateAccuracy(results, testlabels)
+
+
+
+
+
+Sources used to obtain data: 
+http://vision.is.tohoku.ac.jp/~kyamagu/research/clothing_parsing/
+
+Sources used for code and experimental work:
+http://www.csie.ntu.edu.tw/~cjlin/libsvm/

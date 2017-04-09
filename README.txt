@@ -1,4 +1,4 @@
-This folder contains all the data, code, and resource references for CSC420 Project 3: 
+﻿This folder contains all the data, code, and resource references for CSC420 Project 3: 
 http://www.cs.utoronto.ca/~fidler/teaching/2017/CSC420.html
 
 
@@ -23,9 +23,15 @@ The functions below are self explanatory. make sure you run the startup.m file f
 matlab runtime environment before you run these function. 
 Function:
 
+[outputImage ] = personBackgroundDetector(truths)
+
 [labels, features] = extractBinaryTrainData(truths)
 
+[labels, features] = extractMultiTrainData(truths)
+
 labelmap = labelimagebinary(TrainedSVM, img)
+
+labelmap = labelimagemulti(TrainedSVM, img)
 
 totalAccuracy = evaluateAccuracy(results, testlabels)
 

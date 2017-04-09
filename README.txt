@@ -33,7 +33,7 @@ totalAccuracy = evaluateAccuracy(results, testlabels)
 To use the functions in the libsvm library "windows", make sure you're on a Windows platform and that you run the startup.m script first. 
 
 
-Sources of data and code: 
+Sources of data (images + label maps + truths.mat(contains joint point information for the imagees)+ libsvm 3.2.2):
 
 Sources used to obtain data: 
 http://vision.is.tohoku.ac.jp/~kyamagu/research/clothing_parsing/
